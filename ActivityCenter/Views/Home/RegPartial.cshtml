@@ -1,0 +1,18 @@
+<div class="regform">
+    <p>Register</p>
+    <form asp-action="Register" asp-controller="Home" method="post">
+        <label asp-for="Name">Name: </label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span><br>
+        <label asp-for="Email">Email: </label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email"></span><br>
+        <label asp-for="Password">Password: </label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password"></span><br>
+        <label asp-for="Confirm">Confirm Password: </label>
+        <input asp-for="Confirm">
+        <span asp-validation-for="Confirm"></span><br>
+        <button asp-for="submit">Submit</button>
+    </form>
+</div>

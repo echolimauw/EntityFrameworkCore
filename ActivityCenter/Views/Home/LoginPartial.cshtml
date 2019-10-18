@@ -1,0 +1,11 @@
+<div class="regform">
+    <form asp-action="Login" asp-controller="Home" method="post">
+        <label asp-for="LoginEmail">Email: </label>
+        <input asp-for="LoginEmail">
+        <span asp-validation-for="LoginEmail"></span><br>
+        <label asp-for="LoginPassword">Password: </label>
+        <input asp-for="LoginPassword">
+        <span asp-validation-for="LoginPassword"></span><br>
+        <button asp-for="submit">Submit</button>
+    </form>
+</div>

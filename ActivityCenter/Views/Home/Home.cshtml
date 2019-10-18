@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+@using ActivityCenter.Models
+@model Plan
+    <div class="container">
+        <div class="topbar">
+        <p>Welcome, @ViewBag.SUser.Name!</p>
+        
+        </div>
+        <div class="activitytable">
+            <table>
+                <tr>
+                    <th>Activity</th>
+                    <th>Date and Time</th> 
+                    <th>Duration</th>
+                    <th>Event Coordinator</th>
+                    <th>No. of Participants</th>
+                    <th>Actions</th>
+                </tr>
+                @{
+                    foreach(s in Scheduled)
+                    {
+                        <tr>
+                            <td>@Model.Name</td>
+                            <td>@Model.ScheduledFor</td>
+                            <td>@Model.DurationInt @Model.DurationType</td>
+                            foreach(u in ViewBag.allusers)
+                            {
+                                if(item.CreatorId == u.UserId)
+                                {
+                                    <td>@u.Name</td>
+                                }
+                            }
+                            <td>@Model.Creator</td>
+                            <td>@Model.Description</td>                            
+                        </tr>
+                    }
+                }                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
